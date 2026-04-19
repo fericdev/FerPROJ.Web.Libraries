@@ -24,6 +24,10 @@ namespace FerPROJ.Web.Libraries.BaseServices {
         // Registration API
         // ---------------------------
         public static class Set {
+            public static void Initialize(IServiceCollection services) {
+                _services = services;
+                Build();
+            }
             public static IServiceCollection AsDbContext<T>(Action<DbContextOptionsBuilder> option = null) where T : DbContext {
                 var regService = _services.AddDbContext<T>(option);
                 Build();

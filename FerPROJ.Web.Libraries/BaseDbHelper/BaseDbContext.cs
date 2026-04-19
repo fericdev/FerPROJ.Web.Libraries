@@ -6,12 +6,8 @@ using System.Text;
 
 namespace FerPROJ.Web.Libraries.BaseDbHelper {
     public partial class BaseDbContext : DbContext {
-        public BaseDbContext(DbContextOptions<BaseDbContext> options)
+        public BaseDbContext(DbContextOptions options)
             : base(options) {
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
-            optionsBuilder.UseMySql(ConnectionString.ENTITY_CONNECTION_STRING, ServerVersion.AutoDetect(ConnectionString.ENTITY_CONNECTION_STRING));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {

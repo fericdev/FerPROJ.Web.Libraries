@@ -13,7 +13,7 @@ using System.Linq.Expressions;
 using System.Text;
 
 namespace FerPROJ.Web.Libraries.BaseDbHelper {
-    public abstract class BaseRepository<TContext, TModel, TEntity> : IDisposable
+    public abstract class BaseRepository<TContext, TModel, TEntity> : IAsyncDisposable
         where TContext : BaseDbContext
         where TModel : BaseModel
         where TEntity : BaseEntity {
@@ -25,8 +25,8 @@ namespace FerPROJ.Web.Libraries.BaseDbHelper {
         protected BaseRepository(TContext ts) {
             _ts = ts;
         }
-        public void Dispose() {
-            throw new NotImplementedException();
+        public async ValueTask DisposeAsync() {
+            await _ts.DisposeAsync();
         }
 
         #region Base GET for Model
