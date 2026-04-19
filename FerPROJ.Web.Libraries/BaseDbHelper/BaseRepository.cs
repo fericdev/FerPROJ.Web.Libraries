@@ -3,6 +3,7 @@ using FerPROJ.Web.Libraries.BaseDataExtensions;
 using FerPROJ.Web.Libraries.BaseDbExtensions;
 using FerPROJ.Web.Libraries.BaseEntities;
 using FerPROJ.Web.Libraries.BaseModels;
+using FerPROJ.Web.Libraries.BaseServices;
 using Microsoft.EntityFrameworkCore;
 using MySqlConnector;
 using System;
@@ -18,6 +19,9 @@ namespace FerPROJ.Web.Libraries.BaseDbHelper {
         where TEntity : BaseEntity {
 
         public TContext _ts;
+        protected BaseRepository() {
+            _ts = BaseServiceManager.Get<TContext>.Service();
+        }
         protected BaseRepository(TContext ts) {
             _ts = ts;
         }
