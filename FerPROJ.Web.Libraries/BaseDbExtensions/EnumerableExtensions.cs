@@ -148,7 +148,7 @@ namespace FerPROJ.Libraries.DBHelper.Extensions {
                     var statusValue = statusProperty.GetValue(x);
 
                     // Check if Status property is of type string and matches active status
-                    if (statusValue is string statusString && statusString == SystemConstants.ACTIVE_STATUS) {
+                    if (statusValue is string statusString && statusString == BaseSystemConstants.ACTIVE_STATUS) {
                         return true;
                     }
 
@@ -176,7 +176,7 @@ namespace FerPROJ.Libraries.DBHelper.Extensions {
                     var statusValue = statusProperty.GetValue(x);
 
                     // Check if Status property is of type string and matches active status
-                    if (statusValue is string statusString && statusString == SystemConstants.IN_ACTIVE_STATUS) {
+                    if (statusValue is string statusString && statusString == BaseSystemConstants.IN_ACTIVE_STATUS) {
                         return true;
                     }
 

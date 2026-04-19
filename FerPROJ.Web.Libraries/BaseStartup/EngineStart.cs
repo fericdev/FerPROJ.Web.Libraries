@@ -19,8 +19,8 @@ namespace FerPROJ.Web.Libraries.BaseStartup {
             // Register DbContext using the generic type
             BaseServiceManager.Set.AsDbContext<TContext>(options =>
                 options.UseMySql(
-                    ConnectionString.ENTITY_CONNECTION_STRING,
-                    ServerVersion.AutoDetect(ConnectionString.ENTITY_CONNECTION_STRING)
+                    BaseConnectionString.Get(),
+                    ServerVersion.AutoDetect(BaseConnectionString.Get())
                 ));
 
             // ✅ Map abstract → concrete

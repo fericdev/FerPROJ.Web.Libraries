@@ -13,6 +13,6 @@ namespace FerPROJ.Web.Libraries.BaseEntities {
         public DateTime? DateDeleted { get; set; } = null;
         public Guid CreatedById { get; set; }
         public Guid? ModifiedById { get; set; } = null;
-        public string Status { get; set; } = SystemConstants.ACTIVE_STATUS;
+        public string Status { get; set; } = BaseSystemConstants.ACTIVE_STATUS;
     }
 }
