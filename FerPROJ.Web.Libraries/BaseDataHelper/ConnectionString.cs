@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace FerPROJ.Web.Libraries.BaseDataHelper {
-    public class ConnectionString {
+    public partial class ConnectionString {
         public static string ENTITY_CONNECTION_STRING => 
             $"server=localhost;" +
             $"port=3309;" +
