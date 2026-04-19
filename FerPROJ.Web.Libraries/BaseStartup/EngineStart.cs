@@ -1,5 +1,6 @@
 ﻿using FerPROJ.Web.Libraries.BaseDataHelper;
 using FerPROJ.Web.Libraries.BaseDbHelper;
+using FerPROJ.Web.Libraries.BaseModels;
 using FerPROJ.Web.Libraries.BaseServices;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -36,6 +37,9 @@ namespace FerPROJ.Web.Libraries.BaseStartup {
                     ServerVersion.AutoDetect(ConnectionString.ENTITY_CONNECTION_STRING)
                 ));
 
+            BaseServiceRegistration.RegisterRepository();
+            BaseServiceRegistration.RegisterType<BaseModel>("Models");
+            //
             BaseDbMigration.RunDatabaseMigrationAsync<TContext>().Wait();
         }
     }
