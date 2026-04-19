@@ -35,6 +35,8 @@ namespace FerPROJ.Web.Libraries.BaseStartup {
                     ConnectionString.ENTITY_CONNECTION_STRING,
                     ServerVersion.AutoDetect(ConnectionString.ENTITY_CONNECTION_STRING)
                 ));
+
+            BaseDbMigration.RunDatabaseMigrationAsync<TContext>().Wait();
         }
     }
 }
